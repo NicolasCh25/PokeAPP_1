@@ -1,13 +1,39 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'pokemon-list', pathMatch: 'full' },
-  { path: 'pokemon-list', loadChildren: () => import('./pages/pokemon-list/pokemon-list.module').then(m => m.PokemonListPageModule) },
+
+  // ✅ REDIRECCIÓN INICIAL (IMPORTANTE)
+  {
+    path: '',
+    redirectTo: 'pokemon',
+    pathMatch: 'full'
+  },
+
+  // 📄 LISTA DE POKÉMON
+  {
+    path: 'pokemon',
+    loadChildren: () =>
+      import('./pages/pokemon-list/pokemon-list.module')
+        .then(m => m.PokemonListPageModule)
+  },
+
+  // 🔍 DETALLE
+  {
+    path: 'pokemon/:name',
+    loadChildren: () =>
+      import('./pages/pokemon-detail/pokemon-detail.module')
+        .then(m => m.PokemonDetailPageModule)
+  }
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules
+    })
+  ],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}

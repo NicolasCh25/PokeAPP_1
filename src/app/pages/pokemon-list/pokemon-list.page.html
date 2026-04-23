@@ -2,17 +2,35 @@
   <ion-toolbar>
     <ion-title>Pokémon List</ion-title>
   </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-searchbar
+      [(ngModel)]="searchTerm"
+      (ionInput)="searchPokemon()"
+      placeholder="Buscar Pokémon">
+    </ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
   <ion-list>
-    <ion-item *ngFor="let pokemon of pokemons">
-      <ion-label>{{ pokemon.name | titlecase }}</ion-label>
-      <a href="{{ pokemon.url}}"><ion-label>{{ pokemon.url}}</ion-label></a>
-      
+    <ion-item *ngFor="let pokemon of pokemons"
+              [routerLink]="['/pokemon', pokemon.name]">
+
+      <ion-thumbnail slot="start">
+        <img [src]="pokemon.sprites.front_default">
+      </ion-thumbnail>
+
+      <ion-label>
+        <h2>{{ pokemon.name | titlecase }}</h2>
+        <p>Altura: {{ pokemon.height }}</p>
+        <p>Peso: {{ pokemon.weight }}</p>
+      </ion-label>
+
     </ion-item>
-  
   </ion-list>
 
-  <ion-spinner *ngIf="loading" class="loading-spinner"></ion-spinner>
+  <ion-spinner *ngIf="loading"></ion-spinner>
+
 </ion-content>
