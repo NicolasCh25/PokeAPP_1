@@ -153,17 +153,18 @@ src/assets/
 
 ## 📸 Resultados
 
-📸 Lista de Pokémon  
-📸 Detalle de Pokémon  
-📸 Buscador funcionando  
+### 📷 Imagen 1
+![Imagen 1](img1.jpeg)
+
+### 📷 Imagen 2
+![Imagen 2](img2.jpeg)
+
+### 📷 Imagen 3
+![Imagen 3](img3.jpeg)
+
+### 📷 Imagen 4
+![Imagen 4](img4.jpeg)
 
 ---
 
-## 👨‍💻 Autor
 
-**Nicolás Chiguano**  
-Escuela Politécnica Nacional  
-Aplicaciones Móviles  
-
-Proyecto basado en:  
-https://github.com/jzaldumbide/pokeapp.git
