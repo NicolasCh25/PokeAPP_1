@@ -402,26 +402,7 @@ src/assets/
 
 ---
 
-### Paso 2: Mostrar en el header
 
-```html
-<ion-title>
-  <img src="assets/logo.png" alt="logo" style="height:40px;">
-</ion-title>
-```
-
-📸 *Espacio para captura del código*
-
----
-
-### Paso 3: Ajustar estilos (opcional)
-
-```css
-ion-title img {
-  display: block;
-  margin: auto;
-}
-```
 
 📸 *Espacio para captura del resultado*
 
