@@ -418,20 +418,7 @@ src/assets/
 
 ---
 
-## ⚠️ Observaciones
 
-* Se realizan múltiples llamadas HTTP
-* Puede afectar el rendimiento
-
----
-
-## 🚀 Mejoras posibles
-
-* Uso de `forkJoin` (RxJS)
-* Cache de datos
-* Paginación
-
----
 
 ## 👨‍💻 Autor
 
